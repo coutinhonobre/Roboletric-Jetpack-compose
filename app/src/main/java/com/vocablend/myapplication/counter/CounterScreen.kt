@@ -12,7 +12,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 
@@ -35,7 +34,7 @@ fun CounterScreen(
 }
 
 @Composable
-fun CounterScreenContent(
+internal fun CounterScreenContent(
     state: CounterContract.State,
     onEvent: (CounterContract.Event) -> Unit,
     modifier: Modifier = Modifier
@@ -58,13 +57,4 @@ fun CounterScreenContent(
             Text(text = "Increment")
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun CounterScreenPreview() {
-    CounterScreenContent(
-        state = CounterContract.State(count = 3),
-        onEvent = {}
-    )
 }
